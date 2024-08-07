@@ -10,29 +10,31 @@ jobs:
   build:
     runs-on: windows-latest
 
-    defaults:
-      run:
-        shell: bash
-        working-directory: .\cise_ass1a_worksheet2\my-react-app
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3 # Updated to the latest version
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3 # Updated to the latest version
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: "16.x"
+
+      - name: Set up Bash shell
+        run: |
+          echo "Setting up Git Bash"
+        shell: bash
 
       - name: Install dependencies
         run: npm install
+        shell: bash
+        working-directory: ./cise_ass1a_worksheet2/my-react-app
 
       - name: Build
         run: npm run build
+        shell: bash
+        working-directory: ./cise_ass1a_worksheet2/my-react-app
 
       - name: Run tests
         run: npm test
+        shell: bash
+        working-directory: ./cise_ass1a_worksheet2/my-react-app
