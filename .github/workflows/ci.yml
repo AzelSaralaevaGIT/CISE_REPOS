@@ -12,8 +12,8 @@ jobs:
 
     defaults:
       run:
-        shell: bash # or use cmd or powershell if you prefer
-        working-directory: .\CISE_Repos\cise_ass1a_worksheet2\my-react-app
+        shell: bash
+        working-directory: C:\Users\saral\CISE_Repos\cise_ass1a_worksheet2\my-react-app
 
     strategy:
       matrix:
@@ -21,10 +21,10 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3 # Updated to the latest version
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3 # Updated to the latest version
         with:
           node-version: ${{ matrix.node-version }}
 
