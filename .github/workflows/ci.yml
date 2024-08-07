@@ -13,15 +13,24 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./CISE_Repos
+        working-directory: ./worksheet2/my-react-app
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [16.x]
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+
+      - name: Print working directory
+        run: pwd
+
+      - name: List files in root
+        run: ls -la
+
+      - name: List files in worksheet2
+        run: ls -la ./worksheet2
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
