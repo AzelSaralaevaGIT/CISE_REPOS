@@ -13,7 +13,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./cise_ass1a_worksheet2/my-react-app
+        working-directory: .CISE_Repos/cise_ass1a_worksheet2/my-react-app
 
     strategy:
       matrix:
