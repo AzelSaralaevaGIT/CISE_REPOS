@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        shell: powershell
+        shell: bash
         working-directory: ./cise_ass1a_worksheet2/my-react-app
 
     strategy:
