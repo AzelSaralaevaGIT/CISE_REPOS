@@ -13,7 +13,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./cise_ass1a_worksheet2
+        working-directory: ./CISE_Repos
 
     strategy:
       matrix:
