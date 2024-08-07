@@ -8,30 +8,31 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
+
     defaults:
       run:
-        shell: bash
-        working-directory: /cise_ass1a_worksheet2/my-react-app
+        shell: bash # or use cmd or powershell if you prefer
+        working-directory: C:\Users\saral\CISE_Repos\cise_ass1a_worksheet2\my-react-app
 
     strategy:
       matrix:
-        node-version: [17.x]
+        node-version: [16.x]
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
         run: npm install
 
-      - name: Run the tests
-        run: npm test
-
       - name: Build
         run: npm run build
+
+      - name: Run tests
+        run: npm test
